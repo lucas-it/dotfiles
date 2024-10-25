@@ -1,0 +1,8 @@
+{{- $gitUserName := promptStringOnce . "gitUserName" "Git user name" -}}
+{{- $gitUserEmail := promptStringOnce . "gitUserEmail" "Git email" -}}
+{{- $gitUserSSHPubKey := promptStringOnce . "gitUserSSHPubKey" "Git signing key location (ex. ~/.ssh/id_rsa.pub)" -}}
+
+[data.gitconfig.user]
+	name = {{ $gitUserName | quote }}
+	email = {{ $gitUserEmail | quote }}
+	sshPubKey = {{ $gitUserSSHPubKey | quote }}

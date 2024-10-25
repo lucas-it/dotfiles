@@ -1,0 +1,19 @@
+[user]
+	name = {{ .gitconfig.user.name }}
+	email = {{ .gitconfig.user.email }}
+	signingkey = {{ .gitconfig.user.sshPubKey }}
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[core]
+	editor = vim
+	autocrlf = input
+[commit]
+	gpgsign = true
+[rebase]
+	autosquash = true
+[gpg]
+	format = ssh
+[alias]
+	lg = !"~/.local/bin/fzf-git-log"

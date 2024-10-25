@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+history_line_format='%C(red)%h%Creset - %C(cyan)%an%Creset - %C(green)%cs - %C(white)%s%C(yellow)%d'
+
+branch_commits='git log --graph --color --format="$history_line_format"'
+all_commits='git log --all --graph --color --format="$history_line_format"'
+
+eval "$branch_commits" | fzf --ansi --reverse --no-sort --preview-window='35%' \
+  --prompt="> " \
+  --preview='
+    hash=$(echo {} | grep -o "[a-f0-9]\{7\}" | sed -n "1p") \
+    && [[ $hash != "" ]] \
+    && git show --color $hash
+    ' \
+  --bind='enter:execute(
+    hash=$(echo {} | grep -o "[a-f0-9]\{7\}" | sed -n "1p") \
+    && [[ $hash != "" ]] \
+    && sh -c "git show --color $hash | less -R"
+    )' \
+  --bind='alt-c:execute(
+    hash=$(echo {} | grep -o "[a-f0-9]\{7\}" | sed -n "1p") \
+    && [[ $hash != "" ]] \
+    &&  git checkout $hash
+    )+abort' \
+  --bind='alt-r:execute(
+    hash=$(echo {} | grep -o "[a-f0-9]\{7\}" | sed -n "1p") \
+    && [[ $hash != "" ]] \
+    && git reset $hash
+    )+abort' \
+  --bind='alt-i:execute(
+    hash=$(echo {} | grep -o "[a-f0-9]\{7\}" | sed -n "1p") \
+    && [[ $hash != "" ]] \
+    && git rebase --interactive $hash
+    )+abort' \
+  --bind='alt-p:execute(
+    hash=$(echo {} | grep -o "[a-f0-9]\{7\}" | sed -n "1p") \
+    && [[ $hash != "" ]] \
+    && git cherry-pick $hash
+    )+abort' \
+  --header-first \
+  --header '
+  > ENTER to display the diff
+  > ALT-C to checkout the commit | ALT-R to reset to the commit
+  > ALT-I to rebase interactively
+  > ALT-P to cherry pick
+  '
