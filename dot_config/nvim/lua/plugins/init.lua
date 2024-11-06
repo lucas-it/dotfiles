@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = 'BufWritePre',
+    event = "BufWritePre",
     opts = require "configs.conform",
   },
 
@@ -16,9 +16,22 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        "vim", "lua", "vimdoc", "html", "css", "java",
-        "javascript", "typescript", "tsx", "yaml", "json", "php",
-        "twig", "sql", "dockerfile"
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "java",
+        "javascript",
+        "typescript",
+        "tsx",
+        "yaml",
+        "json",
+        "php",
+        "twig",
+        "sql",
+        "dockerfile",
+        "markdown",
       },
     },
   },
@@ -47,7 +60,11 @@ return {
   },
 
   {
-    "RRethy/vim-illuminate"
+    "RRethy/vim-illuminate",
+    event = "CursorHold",
+    config = function()
+      require "configs.illuminate"
+    end,
   },
 
   {
@@ -55,14 +72,40 @@ return {
   },
 
   {
+    "tpope/vim-fugitive",
+    cmd = { "G", "Git" },
+    keys = {
+      { "<leader>gg", "<CMD>Git<CR>", desc = "Git Fugitive" },
+    },
+  },
+
+  {
     "f-person/git-blame.nvim",
     opts = {
       enabled = true,
-      message_template = '<author> • <date> • <summary>',
-      date_format = '%d.%m.%Y %H:%M',
+      message_template = "<author> • <date> • <summary>",
+      date_format = "%d.%m.%Y %H:%M",
     },
     keys = {
-      { '<leader>gb', '<CMD>GitBlameToggle<CR>', desc = 'Git blame toogle' },
+      { "<leader>gb", "<CMD>GitBlameToggle<CR>", desc = "Git blame toogle" },
     },
+  },
+
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    -- stylua: ignore
+    keys = {
+      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    },
+  },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    enabled = false,
   },
 }
