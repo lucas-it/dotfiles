@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 history_line_format='%C(red)%h%Creset - %C(cyan)%an%Creset - %C(green)%cs - %C(white)%s%C(yellow)%d'
 
-branch_commits='git log --graph --color --format="$history_line_format"'
+# branch_commits='git log --graph --color --format="$history_line_format"'
 all_commits='git log --all --graph --color --format="$history_line_format"'
 
-eval "$branch_commits" | fzf --ansi --reverse --no-sort --preview-window='35%' \
+eval "$all_commits" | fzf --ansi --reverse --no-sort --preview-window='35%' \
   --prompt="> " \
   --preview='
     hash=$(echo {} | grep -o "[a-f0-9]\{7\}" | sed -n "1p") \
@@ -36,10 +36,15 @@ eval "$branch_commits" | fzf --ansi --reverse --no-sort --preview-window='35%' \
     && [[ $hash != "" ]] \
     && git cherry-pick $hash
     )+abort' \
+  --bind='alt-y:execute(
+    hash=$(echo {} | grep -o "[a-f0-9]\{7\}" | sed -n "1p") \
+    && [[ $hash !0 "" ]] \
+    | pbcopy \
+    )' \
   --header-first \
   --header '
   > ENTER to display the diff
   > ALT-C to checkout the commit | ALT-R to reset to the commit
   > ALT-I to rebase interactively
-  > ALT-P to cherry pick
+  > ALT-Y to copy the commit has | ALT-P to cherry pick
   '
