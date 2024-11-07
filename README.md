@@ -9,9 +9,15 @@ This repo contains all of my personal configuration files.
 - luarocks
 - node
 - npm
+- zoxide
+- rust
+- kubectl
+- kapp (gm only)
 
 ## Install
 ```bash
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+
 chezmoi init lucas-it --apply
 ```
 

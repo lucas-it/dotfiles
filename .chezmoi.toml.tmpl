@@ -1,8 +1,25 @@
+{{- $sonarToken := "" -}}
+{{- $githubToken := "" -}}
+
+{{- $workEnvChoices := list "macos" "gm" -}}
+{{- $workEnv := promptChoiceOnce . "workEnv" "Work environment" $workEnvChoices -}}
 {{- $gitUserName := promptStringOnce . "gitUserName" "Git user name" -}}
 {{- $gitUserEmail := promptStringOnce . "gitUserEmail" "Git email" -}}
 {{- $gitUserSSHPubKey := promptStringOnce . "gitUserSSHPubKey" "Git signing key location (ex. ~/.ssh/id_rsa.pub)" -}}
+
+{{- if eq $workEnv "gm" -}}
+{{- $sonarToken = promptStringOnce . "sonarToken" "Sonar token" -}}
+{{- $githubToken = promptStringOnce . "githubToken" "GitHub token" -}}
+{{- end -}}
+
+[data.common]
+	workEnv = {{ $workEnv | quote }}
 
 [data.gitconfig.user]
 	name = {{ $gitUserName | quote }}
 	email = {{ $gitUserEmail | quote }}
 	sshPubKey = {{ $gitUserSSHPubKey | quote }}
+
+[data.gm]
+	sonarToken = {{ $sonarToken | quote }}
+	githubToken = {{ $githubToken | quote }}

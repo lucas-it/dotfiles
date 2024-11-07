@@ -17,3 +17,7 @@
 	format = ssh
 [alias]
 	lg = !"~/.local/bin/fzf-git-log"
+{{- if eq .common.workEnv "gm" -}}
+	rcc = !"echo 'TODO'"
+	rvc = !"echo 'TODO'"
+{{- end -}}
