@@ -65,11 +65,11 @@ path+=("$HOME/.cargo/bin")
 # ==================
 # WorkEnv specific
 
-{{- if eq .common.workEnv "macos" -}}
-{{-   include ".zshrc_macos" -}}
-{{- else if eq .common.workEnv "gm" -}}
-{{-   include ".zshrc_gm" -}}
-{{- end -}}
+{{ if eq .common.workEnv "macos" }}
+{{   include ".zshrc_macos" }}
+{{ else if eq .common.workEnv "gm" }}
+{{   template "zshrc_gm.tmpl" .gm }}
+{{ end }}
 
 # ==================
 # Common

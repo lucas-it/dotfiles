@@ -1,0 +1,24 @@
+# Variables
+export HTTP_PROXY="http://127.0.0.1:3128"
+export HTTPS_PROXY="$HTTP_PROXY"
+export FTP_PROXY="$HTTP_PROXY"
+
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+export NODE_EXTRA_CA_CERTS=/usr/share/ca-certificates/GMPKI-CA.crt
+
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+
+export SONAR_TOKEN={{ .sonarToken }}
+export GITHUB_TOKEN={{ .githubToken }}
+
+# Aliases
+alias nvim="/opt/nvim.appimage"
+
+# Path
+path+=('/opt/chezmoi/bin')
+path+=('/opt/snyk/bin')
+path+=("$HOME/.fzf/bin")
+
+# Sources
+source <(kapp completion zsh)
