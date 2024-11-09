@@ -71,14 +71,14 @@ return {
     "folke/trouble.nvim",
   },
 
-  {
-    "tpope/vim-fugitive",
-    cmd = { "G", "Git" },
-    keys = {
-      { "<leader>gg", "<CMD>Git<CR>", desc = "Git Fugitive" },
-    },
-  },
-
+  -- {
+  --   "tpope/vim-fugitive",
+  --   cmd = { "G", "Git" },
+  --   keys = {
+  --     { "<leader>gg", "<CMD>Git<CR>", desc = "Git Fugitive" },
+  --   },
+  -- },
+  --
   {
     "f-person/git-blame.nvim",
     opts = {
@@ -106,8 +106,8 @@ return {
 
   {
     "hrsh7th/nvim-cmp",
-    version = false, -- last release is way too old
-    event = "InsertEnter",
+    url = "https://github.com/iguanacucumber/magazine.nvim",
+    -- event = "InsertEnter",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
@@ -116,5 +116,16 @@ return {
     opts = function()
       return require "configs.cmp"
     end,
+  },
+
+  {
+    "VonHeikemen/searchbox.nvim",
+    cmd = { "SearchBoxMatchAll", "SearchBoxReplace", "SearchBoxIncSearch" },
+    opts = {},
+  },
+
+  {
+    "dnlhc/glance.nvim",
+    cmd = "Glance",
   },
 }

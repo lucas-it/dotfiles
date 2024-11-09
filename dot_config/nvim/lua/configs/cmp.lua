@@ -6,13 +6,14 @@ local defaults = require "nvchad.configs.cmp"
 return {
   auto_brackets = {},
   completion = {
-    completeopt = "menu,menuone,noinsert",
+    completeopt = "menu,menuone,noinsert,noselect",
   },
-  preselect = cmp.PreselectMode.Item,
+  preselect = cmp.PreselectMode.None,
   mapping = defaults.mapping,
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "path" },
+    { name = "treesitter" },
   }, {
     { name = "buffer" },
   }),
@@ -32,10 +33,10 @@ return {
       return item
     end,
   },
-  experimental = {
-    ghost_text = {
-      hl_group = "CmpGhostText",
-    },
-  },
+  -- experimental = {
+  --   ghost_text = {
+  --     hl_group = "CmpGhostText",
+  --   },
+  -- },
   sorting = defaults.sorting,
 }

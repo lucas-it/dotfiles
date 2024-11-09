@@ -13,3 +13,10 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window W
 
 -- lazy
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
+
+-- SearchBox
+map("n", "<leader>ss", "<cmd>SearchBoxIncSearch<cr>", { desc = "Search" })
+map("n", "<leader>sr", "<cmd>SearchBoxReplace<cr>", { desc = "Search and replace" })
+
+-- Glance
+map("n", "<leader>gR", "<cmd>Glance references<cr>", { desc = "Glance references " })
