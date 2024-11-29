@@ -42,18 +42,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export LANG=fr_CH.UTF-8
-
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
+export EDITOR='vim'
 
 # Aliases
 $ZSH_CUSTOM/aliases.zsh
-
-# Variables
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 # Path
 path+=("$HOME/.local/bin")
