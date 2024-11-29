@@ -61,6 +61,8 @@ path+=("$HOME/.cargo/bin")
 {{   include ".zshrc_macos" }}
 {{ else if eq .common.workEnv "gm" }}
 {{   template "zshrc_gm.tmpl" .gm }}
+{{ else if eq .common.workEnv "fedoradesk" }}
+{{   template "zshrc_fedoradesk.tmpl" }}
 {{ end }}
 
 # ==================

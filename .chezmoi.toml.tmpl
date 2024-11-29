@@ -1,7 +1,7 @@
 {{- $sonarToken := "" -}}
 {{- $githubToken := "" -}}
 
-{{- $workEnvChoices := list "macos" "gm" -}}
+{{- $workEnvChoices := list "macos" "gm" "fedoradesk" -}}
 {{- $workEnv := promptChoiceOnce . "workEnv" "Work environment" $workEnvChoices -}}
 {{- $gitUserName := promptStringOnce . "gitUserName" "Git user name" -}}
 {{- $gitUserEmail := promptStringOnce . "gitUserEmail" "Git email" -}}
