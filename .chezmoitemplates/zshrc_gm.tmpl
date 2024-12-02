@@ -16,9 +16,13 @@ export GITHUB_TOKEN={{ .githubToken }}
 # Aliases
 alias nvim="/opt/nvim.appimage"
 
+# Env
+. "$HOME/.cargo/env"
+
 # Path
 path+=('/opt/chezmoi/bin')
 path+=("$HOME/.fzf/bin")
+path+=("$HOME/.cargo/bin")
 
 # Sources
 source <(kapp completion zsh)
