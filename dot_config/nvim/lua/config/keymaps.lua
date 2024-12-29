@@ -5,3 +5,35 @@ local map = vim.keymap.set
 
 map("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 map("n", "<s-tab>", "<cmd>bprevious<cr>", { desc = "Previous Buffer" })
+
+-- package-info
+map(
+  "n",
+  "<leader>cpt",
+  "<cmd>lua require('package-info').toggle()<cr>",
+  { silent = true, noremap = true, desc = "Toggle" }
+)
+map(
+  "n",
+  "<leader>cpd",
+  "<cmd>lua require('package-info').delete()<cr>",
+  { silent = true, noremap = true, desc = "Delete package" }
+)
+map(
+  "n",
+  "<leader>cpu",
+  "<cmd>lua require('package-info').update()<cr>",
+  { silent = true, noremap = true, desc = "Update package" }
+)
+map(
+  "n",
+  "<leader>cpi",
+  "<cmd>lua require('package-info').install()<cr>",
+  { silent = true, noremap = true, desc = "Install package" }
+)
+map(
+  "n",
+  "<leader>cpc",
+  "<cmd>lua require('package-info').change_version()<cr>",
+  { silent = true, noremap = true, desc = "Change package version" }
+)
