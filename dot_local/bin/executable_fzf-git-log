@@ -1,10 +1,20 @@
 #!/usr/bin/env bash
 history_line_format='%C(red)%h%Creset - %C(cyan)%an%Creset - %C(green)%cs - %C(white)%s%C(yellow)%d'
+git_log_cmd="git log --graph --color --format=\"$history_line_format\""
+show_all_branches=false
 
-# branch_commits='git log --graph --color --format="$history_line_format"'
-all_commits='git log --all --graph --color --format="$history_line_format"'
+while getopts "a" opt; do
+  case $opt in
+  a) show_all_branches=true ;;
+  *) echo "Invalid option: -$OPTARG" >&2 ;;
+  esac
+done
 
-eval "$all_commits" | fzf --ansi --reverse --no-sort --preview-window='35%' \
+if $show_all_branches; then
+  git_log_cmd="git log --all --graph --color --format=\"$history_line_format\""
+fi
+
+eval "$git_log_cmd" | fzf --ansi --reverse --no-sort --preview-window='35%' \
   --prompt="> " \
   --preview='
     hash=$(echo {} | grep -o "[a-f0-9]\{7\}" | sed -n "1p") \
