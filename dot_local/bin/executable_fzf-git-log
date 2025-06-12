@@ -51,10 +51,15 @@ eval "$git_log_cmd" | fzf --ansi --reverse --no-sort --preview-window='35%' \
     && [[ $hash !0 "" ]] \
     | pbcopy \
     )' \
+  --bind='alt-f:execute(
+    hash=$(echo {} | grep -o "[a-f0-9]\{7\}" | sed -n "1p") \
+    && [[ $hash != "" ]] \
+    && git commit --fixup $hash \
+    )+abort' \
   --header-first \
   --header '
   > ENTER to display the diff
-  > ALT-C to checkout the commit | ALT-R to reset to the commit
-  > ALT-I to rebase interactively
-  > ALT-Y to copy the commit has | ALT-P to cherry pick
+  > ALT-C to checkout the commit  | ALT-R to reset to the commit
+  > ALT-I to rebase interactively | ALT-F to create a fixup commit
+  > ALT-Y to copy the commit has  | ALT-P to cherry pick
   '
