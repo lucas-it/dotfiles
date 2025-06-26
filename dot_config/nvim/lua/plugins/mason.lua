@@ -5,8 +5,6 @@ return {
       "stylua",
       "shellcheck",
       "shfmt",
-      "snyk",
-      "snyk-ls",
       "rust-analyzer",
     },
   },

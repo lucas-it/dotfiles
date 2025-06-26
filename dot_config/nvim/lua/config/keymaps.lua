@@ -38,3 +38,48 @@ map(
   "<cmd>lua require('package-info').change_version()<cr>",
   { silent = true, noremap = true, desc = "Change package version" }
 )
+
+-- Cmd abbrev
+local cmd = vim.cmd
+
+-- Git fetch
+--
+cmd("cnoreabbrev gf Git fetch")
+
+-- Git pull
+--
+cmd("cnoreabbrev gpr Git pull --rebase")
+
+-- Git push
+--
+cmd("cnoreabbrev gp Git push")
+cmd("cnoreabbrev gpf Git push --force-with-lease")
+
+-- Git commit
+--
+cmd("cnoreabbrev gc Git commit -v")
+cmd("cnoreabbrev gcmsg Git commit -m")
+
+-- Git rebase
+--
+cmd("cnoreabbrev grb Git rebase")
+cmd("cnoreabbrev grbi Git rebase -i")
+cmd("cnoreabbrev grbc Git rebase --continue")
+cmd("cnoreabbrev grba Git rebase --abort")
+
+-- Git stash
+--
+cmd("cnoreabbrev gsta Git stash push")
+cmd("cnoreabbrev gstp Git stash pop")
+
+-- Git diff
+--
+cmd("cnoreabbrev gd Git diff")
+cmd("cnoreabbrev gdto Git difftool --name-status")
+
+-- Git reset
+--
+vim.cmd("cnoreabbrev grh Git reset")
+vim.cmd("cnoreabbrev grhh Git reset --hard")
+vim.cmd("cnoreabbrev grhk Git reset --keep")
+vim.cmd("cnoreabbrev grhs Git reset --soft")
