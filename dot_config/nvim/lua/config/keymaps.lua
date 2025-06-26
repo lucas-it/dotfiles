@@ -50,6 +50,10 @@ cmd("cnoreabbrev gf Git fetch")
 --
 cmd("cnoreabbrev gpr Git pull --rebase")
 
+-- Git checkout
+--
+cmd("cnoreabbrev gco Git checkout")
+
 -- Git push
 --
 cmd("cnoreabbrev gp Git push")
@@ -57,8 +61,8 @@ cmd("cnoreabbrev gpf Git push --force-with-lease")
 
 -- Git commit
 --
-cmd("cnoreabbrev gc Git commit -v")
-cmd("cnoreabbrev gcmsg Git commit -m")
+cmd("cnoreabbrev gc Git commit -m")
+cmd("cnoreabbrev gc! Git commit --amend")
 
 -- Git rebase
 --
