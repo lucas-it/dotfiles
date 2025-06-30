@@ -63,6 +63,7 @@ cmd("cnoreabbrev gpf Git push --force-with-lease")
 --
 cmd("cnoreabbrev gc Git commit -m")
 cmd("cnoreabbrev gc! Git commit --amend")
+cmd("cnoreabbrev gcfu Git commit --fixup")
 
 -- Git rebase
 --
