@@ -57,7 +57,7 @@ cmd("cnoreabbrev gco Git checkout")
 -- Git push
 --
 cmd("cnoreabbrev gp Git push")
-cmd("cnoreabbrev gpf Git push --force-with-lease")
+cmd("cnoreabbrev gpf Git push --force-with-lease --force-if-includes")
 
 -- Git commit
 --
