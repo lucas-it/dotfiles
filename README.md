@@ -3,13 +3,16 @@ This repo contains all of my personal configuration files.
 
 ## Prerequisites
 - git
-- nvim
+- zsh
+- chezmoi
+- neovim
 - fzf
 - ripgrep
 - luarocks
-- node
-- npm
+- java JDK
+- node / npm
 - zoxide
+- lsd
 - rust
 - kubectl
 - kapp (gm only)
@@ -20,12 +23,3 @@ git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 
 chezmoi init lucas-it --apply
 ```
-
-## Configs
-### NVim
-#### Usefull commands
-``:Lazy``
-
-``:MasonInstallAll``
-
-``:TSInstall <language>``
