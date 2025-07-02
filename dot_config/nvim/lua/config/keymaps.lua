@@ -65,6 +65,10 @@ cmd("cnoreabbrev gc Git commit -m")
 cmd("cnoreabbrev gc! Git commit --amend")
 cmd("cnoreabbrev gcfu Git commit --fixup")
 
+-- Git cherry-pick
+--
+cmd("cnoreabbrev gcp Git cherry-pick")
+
 -- Git rebase
 --
 cmd("cnoreabbrev grb Git rebase")
