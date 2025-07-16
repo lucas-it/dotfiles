@@ -62,7 +62,7 @@ cmd("cnoreabbrev gpf Git push --force-with-lease --force-if-includes")
 -- Git commit
 --
 cmd("cnoreabbrev gc Git commit -m")
-cmd("cnoreabbrev gc! Git commit --amend")
+cmd("cnoreabbrev gca Git commit --amend")
 cmd("cnoreabbrev gcfu Git commit --fixup")
 
 -- Git cherry-pick
