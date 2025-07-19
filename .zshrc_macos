@@ -5,5 +5,5 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export ANDROID_HOME=~/Library/Android/sdk
 export ANDROID_SDK_ROOT=~/Library/Android/sdk
 
-# Java 21 - GraalVM
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/graalvm-21.jdk/Contents/Home"
+# Java 21
+export JAVA_HOME="/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home"
