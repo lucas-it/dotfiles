@@ -88,7 +88,7 @@ cmd("cnoreabbrev gdto Git difftool --name-status")
 
 -- Git reset
 --
-vim.cmd("cnoreabbrev grh Git reset")
-vim.cmd("cnoreabbrev grhh Git reset --hard")
-vim.cmd("cnoreabbrev grhk Git reset --keep")
-vim.cmd("cnoreabbrev grhs Git reset --soft")
+cmd("cnoreabbrev grh Git reset")
+cmd("cnoreabbrev grhh Git reset --hard")
+cmd("cnoreabbrev grhk Git reset --keep")
+cmd("cnoreabbrev grhs Git reset --soft")
