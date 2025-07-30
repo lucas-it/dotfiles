@@ -1,5 +1,8 @@
 {
   "extras": [
+    {{ if eq .common.workEnv "gm" -}}
+    "lazyvim.plugins.extras.ai.copilot",
+    {{- end }}
     "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.editor.illuminate",
