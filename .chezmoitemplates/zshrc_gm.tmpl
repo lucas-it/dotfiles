@@ -6,15 +6,12 @@ export NO_PROXY="*.groupemutuel.ch"
 
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
-export NODE_EXTRA_CA_CERTS=/usr/share/ca-certificates/GMPKI-CA.crt
 
-export JAVA_HOME=/usr/lib/jvm/temurin-21-jdk-amd64
+export NODE_EXTRA_CA_CERTS=/etc/pki/ca-trust/source/anchors/gmpki-ca.pem
 
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 export SONAR_TOKEN={{ .sonarToken }}
 export GITHUB_TOKEN={{ .githubToken }}
-
-# Aliases
-alias nvim="/opt/nvim.appimage"
 
 # Env
 . "$HOME/.cargo/env"
