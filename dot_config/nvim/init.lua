@@ -3,3 +3,4 @@ require("config.lazy")
 
 local config_dir = vim.fn.stdpath("config")
 vim.cmd("source " .. config_dir .. "/fugitive-difftool.vim")
+vim.cmd("source " .. config_dir .. "/rsi.vim")
