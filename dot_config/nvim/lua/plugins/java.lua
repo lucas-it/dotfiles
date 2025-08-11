@@ -11,6 +11,24 @@ return {
             completion = {
               importOrder = { "", "javax", "java", "#" },
             },
+            eclipse = {
+              downloadSources = true,
+            },
+            maven = {
+              downloadSources = true,
+            },
+            implementationsCodeLens = {
+              enabled = true,
+            },
+            referencesCodeLens = {
+              enabled = true,
+            },
+            references = {
+              includeDecompiledSources = true,
+            },
+            signatureHelp = {
+              enabled = true,
+            },
           },
         },
       })
