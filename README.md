@@ -1,7 +1,9 @@
 # Dotfiles
+
 This repo contains all of my personal configuration files.
 
 ## Prerequisites
+
 - git
 - zsh
 - chezmoi
@@ -16,8 +18,10 @@ This repo contains all of my personal configuration files.
 - rust
 - kubectl
 - kapp (gm only)
+- @mermaid-js/mermaid-cli
 
 ## Install
+
 ```bash
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 
