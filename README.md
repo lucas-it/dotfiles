@@ -6,6 +6,7 @@ This repo contains all of my personal configuration files.
 
 - git
 - zsh
+- tmux
 - chezmoi
 - neovim
 - fzf
@@ -24,6 +25,7 @@ This repo contains all of my personal configuration files.
 
 ```bash
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 chezmoi init lucas-it --apply
 ```

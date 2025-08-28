@@ -23,3 +23,8 @@
 	rcc = !"~/.local/bin/retreive-custom-config"
 	rvc = !"~/.local/bin/retreive-vite-config"
 {{ end }}
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f

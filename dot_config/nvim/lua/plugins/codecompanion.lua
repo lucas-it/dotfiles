@@ -1,4 +1,3 @@
-{{ if eq .common.workEnv "gm" }}
 return {
   {
     "olimorris/codecompanion.nvim",
@@ -33,4 +32,3 @@ return {
     },
   },
 }
-{{- end -}}
