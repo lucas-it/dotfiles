@@ -5,5 +5,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export ANDROID_HOME=~/Library/Android/sdk
 export ANDROID_SDK_ROOT=~/Library/Android/sdk
 
+# Path
+path+=("$HOME/Library/Application Support/Coursier/bin")
+
 # Java 21
 export JAVA_HOME="/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home"
