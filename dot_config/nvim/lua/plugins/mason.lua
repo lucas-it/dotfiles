@@ -6,6 +6,7 @@ return {
       "shellcheck",
       "shfmt",
       "rust-analyzer",
+      "tinymist",
     },
   },
 }
