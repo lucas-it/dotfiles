@@ -7,6 +7,7 @@ export ANDROID_SDK_ROOT=~/Library/Android/sdk
 
 # Path
 path+=("$HOME/Library/Application Support/Coursier/bin")
+path+=("$HOME/.composer/vendor/bin")
 
 # Java 25
 export JAVA_HOME="/opt/homebrew/opt/openjdk@25/libexec/openjdk.jdk/Contents/Home"
