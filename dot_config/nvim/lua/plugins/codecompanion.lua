@@ -10,19 +10,19 @@ return {
           adapter = "copilot",
         },
       },
-      adapters = {
-        http = {
-          copilot = function()
-            return require("codecompanion.adapters").extend("copilot", {
-              schema = {
-                model = {
-                  default = "claude-sonnet-4.5",
-                },
-              },
-            })
-          end,
-        },
-      },
+      -- adapters = {
+      --   http = {
+      --     copilot = function()
+      --       return require("codecompanion.adapters").extend("copilot", {
+      --         schema = {
+      --           model = {
+      --             default = "claude-sonnet-4.5",
+      --           },
+      --         },
+      --       })
+      --     end,
+      --   },
+      -- },
     },
     dependencies = {
       "nvim-lua/plenary.nvim",
