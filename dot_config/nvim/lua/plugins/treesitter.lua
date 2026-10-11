@@ -20,6 +20,7 @@ return {
         "query",
         "regex",
         "scss",
+        "swift",
         "svelte",
         "tsx",
         "typescript",
